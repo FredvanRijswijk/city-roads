@@ -41,7 +41,7 @@ export default class GridLayer {
     this.scale = 1;
     this.hidden = false;
     this.id = 'paths_' + counter;
-    this._lineWidth = 1;
+    this._lineWidth = 1.5;
     counter += 1;
   }
 

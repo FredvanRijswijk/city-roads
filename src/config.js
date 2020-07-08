@@ -15,6 +15,6 @@ export default {
   },
 
   getBackgroundColor() {
-    return tinycolor('#F7F2E8');
+    return tinycolor('#FFFFFF');
   }
 }

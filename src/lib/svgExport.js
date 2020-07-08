@@ -5,7 +5,7 @@ export default function svgExport(scene, options) {
   const renderer = scene.getRenderer();
   const svgExportSettings = {
     open() {
-      return `<!-- Generator: https://github.com/anvaka/city-roads
+      return `<!-- Generator: https://www.cityprints.art
 Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright
 -->`;
     },
