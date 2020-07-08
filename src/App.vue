@@ -55,23 +55,11 @@
             Save the current data as a protobuf message. For developer use only.
           </span>
         </div>
-
-        <h3>About</h3>
-        <div>
-          <p>This website was created by <a href='https://twitter.com/anvaka' target='_blank'>@anvaka</a>.
-          It downloads roads from OpenStreetMap and renders them with WebGL.
-          </p>
-          <p>
-           You can find the entire <a href='https://github.com/anvaka/city-roads'>source code here</a>. 
-           If you love this website you can also <a href='https://www.paypal.com/paypalme2/anvakos/3'>buy me a coffee</a>, but you don't have to!
-          </p>
-        </div>
       </div>
     </div>
   </div>
 
   <editable-label v-if='placeFound' v-model='name' class='city-name' :printable='true' :style='{color: labelColorRGBA}' :overlay-manager='overlayManager'></editable-label>
-  <div v-if='placeFound' class='license printable can-drag' :style='{color: labelColorRGBA}'>data <a href='https://www.openstreetmap.org/about/' target="_blank" :style='{color: labelColorRGBA}'>© OpenStreetMap</a></div>
   </div>
 </template>
 
@@ -448,7 +436,7 @@ a:focus {
 
 .city-name {
   position: absolute;
-  right: 32px;
+  right: 50%;
   bottom: 54px;
   font-size: 24px;
   color: #434343;
