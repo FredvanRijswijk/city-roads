@@ -1,21 +1,21 @@
 <template>
 <div class='find-place' :class='{centered: boxInTheMiddle }'>
   <div v-if='boxInTheMiddle'>
-    <h3 class='site-header'>city roads</h3>
-    <p class='description'>This website renders every single road within a city</p>
+    <h3 class='site-header'>City roads by CityPrints </h3>
+    <p class='description'>Deze website geeft elke weg binnen een stad weer</p>
   </div>
   <form v-on:submit.prevent="onSubmit" class='search-box'>
-      <input class='query-input' v-model='enteredInput' type='text' placeholder='Enter a city name to start' ref='input'>
+      <input class='query-input' v-model='enteredInput' type='text' placeholder='Welke stad - naam' ref='input'>
       <a type='submit' class='search-submit' href='#' @click.prevent='onSubmit' v-if='enteredInput && !hideInput'>{{mainActionText}}</a>
   </form>
   <div v-if='showWarning' class='prompt message note shadow'>
-    Note: Large cities may require 200MB+ of data transfer and may need a powerful device to render.
+    Grote steden hebben mogelijk 200 MB + aan gegevensoverdracht nodig en hebben mogelijk een krachtig apparaat nodig om te renderen.
   </div>
   <div class='results' v-if='!loading'>
     <div v-if='suggestionsLoaded && suggestions.length' class='suggestions shadow'>
       <div class='prompt message'>
-        <div>Select boundaries below to download all roads within</div>
-        <div class='note'>large cities may require 200MB+ of data transfer and a powerful device</div>
+        <div>Selecteer hieronder de grenzen om alle wegen binnen te downloaden</div>
+        <div class='note'>Grote steden hebben mogelijk 200 MB + aan gegevensoverdracht nodig en hebben mogelijk een krachtig apparaat nodig om te renderen.</div>
       </div>
       <ul>
         <li v-for='(suggestion, index) in suggestions' :key="index">
@@ -38,20 +38,20 @@
   <div v-if='error' class='error message shadow'>
     <div>Sorry, we were not able to download data from the OpenStreetMap.
     It could be very busy at the moment processing other requests. <br/><br/> Please bookmark this website and <a href='#' @click.prevent="retry">try again</a> later?</div>
-    <div class='error-links'>
+    <!-- <div class='error-links'>
       <a href='https://twitter.com/anvaka/status/1218971717734789120' title='see what it supposed to do' target="_blank">see how it should have worked</a>
       <a :href='getBugReportURL(error)' :title='"report error: " + error' target='_blank'>report this bug</a>
-    </div>
+    </div> -->
   </div>
   <div v-if='loading' class='loading message shadow'>
     <loading-icon></loading-icon>
     <span>{{loading}}</span>
     <a href="#" @click.prevent='cancelRequest' class='cancel-request'>cancel</a>
     <div class='load-padding' v-if='stillLoading > 0'>
-      Still loading...
+      Nog bezig met laden...
     </div>
     <div class='load-padding' v-if='stillLoading > 1'>
-      Sorry it takes so long!
+      Sorry dit duurt heeeeeel lang!
     </div>
   </div>
 </div>
@@ -69,7 +69,7 @@ import config from '../config';
 import Progress from '../lib/Progress'
 import LoadOptions from '../lib/LoadOptions';
 
-const FIND_TEXT = 'Find City Bounds';
+const FIND_TEXT = 'Zoek een stad';
 
 export default {
   name: 'FindPlace',

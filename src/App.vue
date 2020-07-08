@@ -4,8 +4,8 @@
   <div id="app">
     <div v-if='placeFound'>
       <div class='controls'>
-        <a href="#" class='print-button' @click.prevent='toggleSettings'>Customize...</a>
-        <a href="#" class='try-another' @click.prevent='startOver'>Try another city</a>
+        <a href="#" class='print-button' @click.prevent='toggleSettings'>Opties...</a>
+        <a href="#" class='try-another' @click.prevent='startOver'>Probeer een andere stad</a>
       </div>
       <div v-if='showSettings' class='print-window'>
         <h3>Display</h3>
@@ -20,12 +20,12 @@
         </div>
 
         <h3>Export</h3>
-        <div class='row'>
+        <!-- <div class='row'>
           <a href='#' @click.prevent='zazzleMugPrint()' class='col'>Onto a mug</a> 
           <span class='col c-2'>
             Print what you see onto a mug. <br/>Get a unique gift of your favorite city.
           </span>
-        </div>
+        </div> -->
         <div class='preview-actions message' v-if='zazzleLink || generatingPreview'>
             <div v-if='zazzleLink' class='padded popup-help'>
               If your browser has blocked the new window, <br/>please <a :href='zazzleLink' target='_blank'>click here</a>
@@ -435,13 +435,16 @@ a:focus {
 }
 
 .city-name {
+  font-family: 'Oswald', sans-serif;
+  text-transform:uppercase;
   position: absolute;
-  right: 50%;
+  text-align: center;
+  right: 37%;
   bottom: 54px;
-  font-size: 24px;
+  font-size: 36px;
   color: #434343;
   input {
-    font-size: 24px;
+    font-size: 36px;
   }
 }
 

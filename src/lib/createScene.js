@@ -21,7 +21,7 @@ export default function createScene(canvas) {
   scene.on('append-child', triggerAdd);
   scene.on('remove-child', triggerRemove);
 
-  scene.setClearColor(0xf7/0xff, 0xf2/0xff, 0xe8/0xff, 1.0);
+  scene.setClearColor(0xff/0xff, 0xff/0xff, 0xff/0xff, 1.0);
   let camera = scene.getCamera();
   if (camera.setMoveSpeed) {
     camera.setMoveSpeed(200);
